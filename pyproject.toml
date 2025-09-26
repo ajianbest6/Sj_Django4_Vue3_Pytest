@@ -1,0 +1,55 @@
+[project]
+name = "pytest-result-sender"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "ajianbest6", email = "3036474507@qq.com"},
+]
+dependencies = ["pytest>=8.4.2"]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
+
+[project.entry-points.pytest11]
+result_log = "pytest_result_sender.plugin"
+
+# 开发者模式
+[dependency-groups]
+dev = [
+    "black>=25.9.0",
+    "isort>=6.0.1",
+    "flake8>=7.3.0",
+]
+
+[tool.black]
+extend-exclude = '''
+/(
+  \.eggs
+  | \.git
+  | \.hg
+  | \.tox
+  | .venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+# pdm 脚本
+[tool.pdm.scripts]
+check = { composite = [
+    "isort .",
+    "black .",
+    "flake8 ."
+] }
+
+test = "pytest"
+
+# 打包编译地址
+[tool.pdm.build]
+package-dir = "src"
