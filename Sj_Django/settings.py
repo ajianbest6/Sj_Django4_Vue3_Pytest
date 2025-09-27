@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "case",  # 新增 case
+    # "case",
+    "Sj_app1"
+
 ]
 
 MIDDLEWARE = [

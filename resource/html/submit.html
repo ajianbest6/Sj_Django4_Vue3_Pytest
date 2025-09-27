@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品评价</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .evaluation-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .rating-section {
+            margin-bottom: 25px;
+        }
+        .rating-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .rating-options {
+            display: flex;
+            gap: 15px;
+        }
+        .rating-option {
+            display: flex;
+            align-items: center;
+        }
+        .rating-option input {
+            margin-right: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            margin-bottom: 20px;
+        }
+        .anonymous-section {
+            margin-bottom: 25px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="evaluation-container">
+        <h1>商品评价</h1>
+        
+        <form id="evaluationForm">
+            <!-- 商品质量评价 -->
+            <div class="rating-section">
+                <span class="rating-title">商品质量评价 <span class="required">*</span></span>
+                <div class="rating-options">
+                    <label class="rating-option">
+                        <input type="radio" name="quality" value="5" required> 非常好
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="quality" value="4"> 好
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="quality" value="3"> 一般
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="quality" value="2"> 差
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="quality" value="1"> 非常差
+                    </label>
+                </div>
+            </div>
+            
+            <!-- 客服态度评价 -->
+            <div class="rating-section">
+                <span class="rating-title">客服态度评价 <span class="required">*</span></span>
+                <div class="rating-options">
+                    <label class="rating-option">
+                        <input type="radio" name="service" value="5" required> 非常好
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="service" value="4"> 好
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="service" value="3"> 一般
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="service" value="2"> 差
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="service" value="1"> 非常差
+                    </label>
+                </div>
+            </div>
+            
+            <!-- 物流速度评价 -->
+            <div class="rating-section">
+                <span class="rating-title">物流速度评价 <span class="required">*</span></span>
+                <div class="rating-options">
+                    <label class="rating-option">
+                        <input type="radio" name="delivery" value="5" required> 非常快
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="delivery" value="4"> 快
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="delivery" value="3"> 一般
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="delivery" value="2"> 慢
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="delivery" value="1"> 非常慢
+                    </label>
+                </div>
+            </div>
+            
+            <!-- 评价内容 -->
+            <div class="rating-section">
+                <span class="rating-title">评价内容</span>
+                <textarea name="comment" placeholder="请写下您的详细评价..."></textarea>
+            </div>
+            
+            <!-- 是否匿名 -->
+            <div class="anonymous-section">
+                <label>
+                    <input type="checkbox" name="anonymous"> 匿名评价
+                </label>
+            </div>
+            
+            <!-- 提交按钮 -->
+            <button type="submit" class="submit-btn">提交评价</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('evaluationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const formData = new FormData(this);
+            const evaluation = {
+                quality: formData.get('quality'),
+                service: formData.get('service'),
+                delivery: formData.get('delivery'),
+                comment: formData.get('comment'),
+                anonymous: formData.get('anonymous') === 'on'
+            };
+            
+            // 这里可以添加AJAX提交逻辑
+            console.log('提交的评价数据:', evaluation);
+            
+            // 模拟提交成功
+            alert('感谢您的评价！');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

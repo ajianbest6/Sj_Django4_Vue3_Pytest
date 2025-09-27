@@ -16,16 +16,14 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
-from django.http import HttpResponse
 
-def home(request):
-    return HttpResponse("欢迎来到首页！")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home),
+    path("feedback/", include('Sj_app1.urls')),
 ]
 
-urlpatterns += static('tests/', document_root='tests')
+# 加载静态文件
+# urlpatterns += static('tests/', document_root='tests')

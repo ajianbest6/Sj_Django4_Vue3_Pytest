@@ -45,10 +45,26 @@ multi_line_output = 3
 check = { composite = [
     "isort .",
     "black .",
-    "flake8 ."
+    "flake8 .",
+] }
+
+init = { composite = [
+    "makeM",
+    "M",
+    "createadmin",
 ] }
 
 test = "pytest"
+
+makeM = 'python manage.py makemigrations'
+
+M = 'python manage.py migrate'
+
+R = 'python manage.py runserver'
+
+T = 'python manage.py test'
+
+createadmin = '''python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'adminpass')"'''
 
 # 打包编译地址
 [tool.pdm.build]
