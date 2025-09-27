@@ -17,7 +17,15 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("欢迎来到首页！")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", home),
 ]
+
+urlpatterns += static('tests/', document_root='tests')

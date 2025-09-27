@@ -9,3 +9,4 @@ __pycache__/
 dist/
 pdm.lock
 db.sqlite3
+tests/
