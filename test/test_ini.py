@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from pytest_result_sender import plugin
+from Sj_Django_Vue3_Pytest import plugin
 
 pytest_plugins = "pytester"  # 测试开发
 

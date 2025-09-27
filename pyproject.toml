@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "ajianbest6", email = "3036474507@qq.com"},
 ]
-dependencies = ["pytest>=8.4.2"]
+dependencies = ["pytest>=8.4.2", "click>=8.3.0"]
 requires-python = ">=3.10"
 
 [build-system]
@@ -13,7 +13,7 @@ requires = ["pdm-pep517>=1.0"]
 build-backend = "pdm.pep517.api"
 
 [project.entry-points.pytest11]
-result_log = "pytest_result_sender.plugin"
+result_log = "Sj_Django_Vue3_Pytest.plugin"
 
 # 开发者模式
 [dependency-groups]
