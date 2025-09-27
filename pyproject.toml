@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "ajianbest6", email = "3036474507@qq.com"},
 ]
-dependencies = ["pytest>=8.4.2", "click>=8.3.0"]
+dependencies = ["pytest>=8.4.2", "click>=8.3.0", "requests>=2.32.5", "django>=5.2.6"]
 requires-python = ">=3.10"
 
 [build-system]

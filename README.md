@@ -52,6 +52,7 @@ pip install pdm
 #### 2.2 初始化环境
 
 ```bash
+# 安装依赖库
 pdm install
 ```
 
