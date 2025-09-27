@@ -1,6 +1,6 @@
 [project]
 name = "Sj-Django-Vue3-Pytest"
-version = "0.1.1"
+version = "0.1.2"
 description = "Default template for PDM package"
 authors = [
     {name = "ajianbest6", email = "3036474507@qq.com"},
