@@ -1,5 +1,5 @@
 [project]
-name = "Sj-Django-Vue3_Pytest"
+name = "Sj-Django-Vue3-Pytest"
 version = "0.1.1"
 description = "Default template for PDM package"
 authors = [

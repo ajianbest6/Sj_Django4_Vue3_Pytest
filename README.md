@@ -16,24 +16,27 @@
 
 ```
 Sj_Django4_Vue3_Pytest/
-├── .venv/                  # 虚拟环境目录
-├── resource/               # 图片文档目录
-│   ├── docs/               # 文档目录
-│   └── imgs/               # 图片目录
-├── source/                 # 资源存储目录
-│   ├── model/              # 模型存储目录
-│   └── video/              # 视频存储目录
-├── src/                    # 源代码目录
-│   ├── output/             # 文件输出目录
-│   └── utils/              # 测试工具目录
-├── .flake8                 # flake8 配置文件
-├── .gitignore              # git 忽略文件
-├── .pdm-version            # pdm python 环境版本
-├── pdm.lock                # pdm 依赖库锁定文件
-├── LICENSE                 # 开源许可证
-├── pyproject.toml          # uv 依赖库
-├── pytest.ini              # pytest 配置文件
-└── README.md               # 项目说明文档
+├── .github/                        # github配置目录
+│   ├── workflows/                  # 工作流
+│   └── publish-to-pypi.yaml/       # 发布Pypi配置文件
+├── .venv/                          # 虚拟环境目录
+├── resource/                       # 图片文档目录
+│   ├── docs/                       # 文档目录
+│   └── imgs/                       # 图片目录
+├── source/                         # 资源存储目录
+│   ├── model/                      # 模型存储目录
+│   └── video/                      # 视频存储目录
+├── src/                            # 源代码目录
+│   ├── output/                     # 文件输出目录
+│   └── utils/                      # 测试工具目录
+├── .flake8                         # flake8 配置文件
+├── .gitignore                      # git 忽略文件
+├── .pdm-version                    # pdm python 环境版本
+├── pdm.lock                        # pdm 依赖库锁定文件
+├── LICENSE                         # 开源许可证
+├── pyproject.toml                  # uv 依赖库
+├── pytest.ini                      # pytest 配置文件
+└── README.md                       # 项目说明文档
 ```
 
 ### 2. 快速开始
