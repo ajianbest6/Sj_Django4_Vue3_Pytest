@@ -15,12 +15,12 @@ def submit(request):
             'comment': request.POST['comment'],
             'anonymous': request.POST['anonymous'] == 'true',
         }
-        
+
         # obj = FeedBack(**data)
         # obj.save()
 
         FeedBack.objects.create(**data)
-
+    
         return HttpResponseRedirect('http://127.0.0.1:8000/feedback/result/')
     
     file_path = os.path.join(settings.BASE_DIR, 'resource', 'feedback', 'submit.html')
