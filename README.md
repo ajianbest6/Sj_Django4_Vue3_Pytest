@@ -21,7 +21,7 @@ Sj_Django4_Vue3_Pytest/
 │   └── publish-to-pypi.yaml/       # 发布Pypi配置文件
 ├── .venv/                          # 虚拟环境目录
 ├── resource/                       # 图片文档目录
-│   ├── docs/                       # 文档目录
+│   ├── html/                       # html文件目录
 │   └── imgs/                       # 图片目录
 ├── source/                         # 资源存储目录
 │   ├── model/                      # 模型存储目录

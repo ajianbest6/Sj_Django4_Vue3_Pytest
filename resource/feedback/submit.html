@@ -72,13 +72,20 @@
         .required {
             color: red;
         }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="evaluation-container">
         <h1>商品评价</h1>
         
-        <form id="evaluationForm">
+        <form id="evaluationForm" action="http://127.0.0.1:8000/feedback/submit/" method="POST">
+            <!-- action 必须指向 submit -->
             <!-- 商品质量评价 -->
             <div class="rating-section">
                 <span class="rating-title">商品质量评价 <span class="required">*</span></span>
@@ -153,19 +160,26 @@
             
             <!-- 是否匿名 -->
             <div class="anonymous-section">
+                <input type="hidden" name="anonymous" value="false">
                 <label>
-                    <input type="checkbox" name="anonymous"> 匿名评价
+                    <input type="checkbox" name="anonymous" value="true"> 匿名评价
                 </label>
             </div>
             
             <!-- 提交按钮 -->
             <button type="submit" class="submit-btn">提交评价</button>
+            
+            <!-- 加载提示 -->
+            <div class="loading" id="loadingIndicator">
+                正在提交，请稍候...
+            </div>
         </form>
     </div>
 
     <script>
         document.getElementById('evaluationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // 显示加载提示
+            document.getElementById('loadingIndicator').style.display = 'block';
             
             // 获取表单数据
             const formData = new FormData(this);
@@ -174,15 +188,15 @@
                 service: formData.get('service'),
                 delivery: formData.get('delivery'),
                 comment: formData.get('comment'),
-                anonymous: formData.get('anonymous') === 'on'
+                anonymous: formData.get('anonymous') !== 'false'
             };
             
             // 这里可以添加AJAX提交逻辑
             console.log('提交的评价数据:', evaluation);
             
-            // 模拟提交成功
-            alert('感谢您的评价！');
-            this.reset();
+            // 注意：由于表单设置了action，页面会自动跳转
+            // 如果需要先处理数据再跳转，可以在这里使用AJAX提交
+            // 然后使用 window.location.href = "http://127.0.0.1:8000/feedback/result/";
         });
     </script>
 </body>
