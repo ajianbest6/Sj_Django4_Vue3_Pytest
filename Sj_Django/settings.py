@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "case",
-    "Sj_app1"
-
+    # "Sj_app1",
+    "Sj_app2",
 ]
 
 MIDDLEWARE = [
@@ -123,3 +123,17 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+LANGUAGE_CODE = 'zh-hans'
+
+USE_I18N = True
+
+USE_L10N = False
+
+TIME_ZONE = 'Asia/Shanghai'
+DATETIME_FORMAT = 'Y-m-d H:i:s'
+USE_TZ = False
+
+MEDIA_ROOT = 'uploads/'
+MEDIA_URL = 'uploads/'
